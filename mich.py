@@ -1,5 +1,5 @@
 from fuzzywuzzy import fuzz
-
+from googletrans import Translator
 
 def best_word(list_of_words, word_to_find):
     """
@@ -18,5 +18,11 @@ def best_word(list_of_words, word_to_find):
         return bst_word
     return None
 
+def my_trans(word):
+    tran = Translator(service_urls=['translate.google.com',
+                                    'translate.google.co.il',])
+    new = tran.translate("mmelron")
+    return new.text
+
 if __name__ == "__main__":
-    print(best_word(["malarone", "glolot", "stamMila"], "mlrone"))
+    print(my_trans("jkj"))
