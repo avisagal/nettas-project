@@ -5,12 +5,28 @@ import mich
 
 SUB_MED_FOUND = "כותרת למצאנו תרופה"
 BODY_MED_FOUND = "טקסט למצאנו תרופה"
+HEADERS = ["id", "medicine name", "amount", "city", "expiration date", "is closed", "owner name", "picture"]
+
 
 app = Flask(__name__)
+
+def translate_to_dict(list_data):
+    dict_id = 1
+    outer_dict = {}
+    for cur_tuple in list_data:
+        inner_dict = {}
+        for i in range(8):
+            inner_dict[HEADERS[i]] = cur_tuple[i]
+        outer_dict[dict_id] = inner_dict
+        dict_id += 1
+
+    return outer_dict
+
 
 @app.route("/")
 def index():
     return render_template("search.html")
+
 
 @app.route("/check=<name>")
 def check(name):
@@ -22,7 +38,7 @@ def check(name):
                   from meds
                   inner join meds_data on meds.med_name = meds_data.med_name
                   where meds.med_name = ? collate nocase''', name)
-    json_return = json.dumps(c.fetchall())
+    json_return = json.dumps(translate_to_dict(c.fetchall()))
 
     return jsonify(json_return)
 

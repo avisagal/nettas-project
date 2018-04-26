@@ -43,6 +43,9 @@ c.executemany("INSERT INTO waiting VALUES (?,?,?)", values)
 
 
 
+c.execute('''CREATE TABLE waiting
+             (mail text, name text, med_name text)''')
+
 
 conn.commit()
 
