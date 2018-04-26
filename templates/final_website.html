@@ -19,12 +19,15 @@
         <img src={{url_for('static',filename="photos/p2.png")}} class="img-fluid" alt="Responsive image">
     </div>
     <!-- search part -->
+    <!-- <div style="background-color: #FBD879" class="container"> -->
     <div style="background-color: #FBD879">
-        <div class="form-row">
-            <div id = "basic_search" class="form-group col-md-6">
+        <div class="form-row" >
+                <div class=container >
+            <div id = "basic_search" class="form-group col-md-6" >
                 <input class="form-control" type="text" id="ti" align="center">
                 <button onclick="hi()" style="background-color: #1E59D4" type="submit" class="btn btn-info"> search Medicine</button>
             </div>
+        </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -109,7 +112,7 @@
             var table = document.createElement("table");
             table.className = "table table-dark";
             var sDev= document.getElementById("basic_search");
-            document.sDev.appendChild(table);
+            sDev.appendChild(table);
             // crateing the header of the file
             var tr = table.insertRow(0);
             var col = ["id", "medicine name", "expiration date", "amount", "is closed", "city", "owner name", "picture"]
