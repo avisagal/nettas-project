@@ -4,6 +4,13 @@ import json
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return render_template("search.html")
+
+@app.route("/check=<name>")
+def check(name):
+    return json.dumps({name:'b'})
 
 @app.route("/search")
 def search():
