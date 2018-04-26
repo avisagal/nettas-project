@@ -54,19 +54,22 @@ function hi() {
   	convertToTable(data);
   })
 
-                             function sendForMail(){
-                const inputTag1 = document.getElementById('ti')
-                const inputTag2 = document.getElementById('ti')
-                const inputTag3 = document.getElementById('ti')
+
+}
+
+       function sendForMail(){
+                const inputTag1 = document.getElementById('t2');
+                const inputTag2 = document.getElementById('t3');
+                const inputTag3 = document.getElementById('t4');
                 var mailVal = inputTag1.value;
                 var nameVal = inputTag2.value;
                 var medVal = inputTag3.value;
-				$.post( "/add_waiting", JSON.stringify({mail:mailVal, name:nameVal, med:medVal}));
+				$.post( "/add_waiting", {mail:mailVal, name:nameVal, med:medVal});
+				console.log({mail:mailVal, name:nameVal, med:medVal});
                 inputTag1.innerHTML = "";
                 inputTag2.innerHTML = "";
                 inputTag3.innerHTML = "";
             }
-}
 
 
 </script>

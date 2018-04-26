@@ -52,9 +52,10 @@ def check(name):
 def add_waiting():
     data = request.form
     details = (data["mail"], data["name"], data["med"])
+
     c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
     conn.commit()
-    return
+    return jsonify(json.dumps({'state':0}))
 
 # @app.route("/add_waiting")
 # def add_waiting():
