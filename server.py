@@ -4,20 +4,11 @@ import json
 import mich
 
 app = Flask(__name__)
+cur_uid = 5
 
 @app.route("/")
 def index():
     return render_template("search.html")
-
-# @app.route("/check=<name>")
-# def check(name):
-#     print(name)
-#     return json.dumps({'b':name})
-
-@app.route("/search")
-def search():
-    return render_template()
-
 
 # for post:
 # data = request.args
@@ -49,6 +40,16 @@ def add():
     data = request.args
     uid = int(data["uid"])
     med_name = data["med_name"]
+    expiration_date = data["date"]  # how do we get it?
+    amount = float(data["amount"])
+    is_closed = data["is_closed"]  # how do we get it?
+    city = data["city"]
+    owner_mail = data["mail"]
+    name = data["name"]
+
+    med_name = mich.
+
+
 
 
 
