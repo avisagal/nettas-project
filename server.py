@@ -3,8 +3,8 @@ import sqlite3
 import json
 import mich
 
-SUB_MED_FOUND = "כותרת למצאנו תרופה"
-BODY_MED_FOUND = "טקסט למצאנו תרופה"
+SUB_MED_FOUND = "מצאנו את התרופה שחיפשת!"
+BODY_MED_FOUND = "משתמש חדש הוסיף למאגר את התרופה שחיפשת!<br> היכנס.י לאתר למציאת התרופה המבוקשת.<br> צוות Meditake"
 HEADERS = ["id", "medicine name", "amount", "city", "expiration date", "is closed", "owner name", "picture"]
 
 

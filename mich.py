@@ -47,7 +47,7 @@ def send_mail(address_mail, name, subject_text, body_text):
         """<html><head></head><body>
         <img src=%s />
         <br>
-        %s
+        <h1>%s</h1>
         <br>
         %s
         </body></html>""" %(img_url, header, body_text), 'html')
