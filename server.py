@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 import sqlite3
 import json
 
@@ -15,7 +15,12 @@ def query():
     conn = sqlite3.connect('medicine_db.db')
     c = conn.cursor()
 
+
+    data = request.args
+    name = (data["name"],)
     c.execute('select * from meds')
+
+    return "finished"
 
 
 if __name__ == "__main__":
