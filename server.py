@@ -10,17 +10,20 @@ def search():
     return render_template()
 
 
-@app.route("/query", methods=['POST'])
-def query():
+# for post:
+# data = request.args
+# name = (data["name"],)
+
+@app.route("/query/<name>")
+def query(name):
     conn = sqlite3.connect('medicine_db.db')
     c = conn.cursor()
+    name = (name,)
+    c.execute('select * from meds where med_name = ?', name)
+    json_return = json.dumps(c.fetchall())
+    conn.close()
 
-
-    data = request.args
-    name = (data["name"],)
-    c.execute('select * from meds')
-
-    return "finished"
+    return json_return
 
 
 if __name__ == "__main__":
