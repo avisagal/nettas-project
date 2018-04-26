@@ -22,7 +22,10 @@ c = conn.cursor()
 #           ]
 # c.executemany("INSERT INTO meds_data VALUES (?,?)", values)
 
-c.execute("INSERT INTO meds VALUES (4, 'Malarone', '2018-07-04', 15, NULL, 'Raanana', 'netta.barak@gmail.com')")
+#c.execute("INSERT INTO meds VALUES (4, 'Malarone', '2018-07-04', 15, NULL, 'Raanana', 'netta.barak@gmail.com')")
+
+#c.execute('''ALTER TABLE meds ADD COLUMN owner_name text;''')
+
 
 
 
