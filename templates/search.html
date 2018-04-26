@@ -18,13 +18,19 @@
 <input type="text" id="t3">
 <hi>Medication wanted</hi>
 <input type="text" id="t4">
-<button onclick="sendForMail()"> update state</button>
+<button onclick="sendForMail()"> update state</button><br><br>
 <script>
 const inputTag = document.getElementById('ti');
             const inputTag1 = document.getElementById('t2')
             const inputTag2 = document.getElementById('t3')
             const inputTag3 = document.getElementById('t4')
     function convertToTable(data){
+//		if (data != null) {
+//			var sign = document.createElement("button");
+//			sign.innerHTML="sign";
+//			sign.className = "button";
+//			document.body.appendChild(sign);
+//		}
         var table = document.createElement("table");
         table.className = "table table-dark";
         document.body.appendChild(table);
@@ -45,11 +51,7 @@ const inputTag = document.getElementById('ti');
                 tabCell.innerHTML = varTemp[col[j]];
             }
         }
-        if (data != null) {
-			var table = document.createElement("table");
-			table.className = "table table-dark";
-			document.body.appendChild(table);
-		}
+
 }
 
 
