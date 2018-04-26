@@ -36,7 +36,10 @@ def query(name):
 
     return json_return
 
-@app.route("/query/<name>")
+@app.route("/add", methods=['POST'])
+def add():
+    data = request.args
+    uid = int(data["uid"])
 
 if __name__ == "__main__":
     app.run()
