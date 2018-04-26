@@ -27,6 +27,13 @@ def check(name):
 
     return jsonify(json_return)
 
+@app.route("/add_waiting", methods= ["POST"])
+def add_waiting():
+    details = (request.args["mail"], request.args["name"], request["med"])
+    c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
+    conn.commit()
+    return
+
 
 @app.route("/add", methods=['POST'])
 def add():
