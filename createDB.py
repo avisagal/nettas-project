@@ -36,15 +36,15 @@ c = conn.cursor()
 # c.execute('''ALTER TABLE meds_data ADD COLUMN description text;''')
 # c.execute('''ALTER TABLE meds_data ADD COLUMN manufacturer text;''')
 
-values = [('avisagal41@gmail.com',"אבי", "acamol"), ('netta.barak@gmail.com',"נטע", "acamol"),
-          ('shahar.aizenbud@gmail.com', "שחר", "acamol")]
+# values = [('avisagal41@gmail.com',"אבי", "acamol"), ('netta.barak@gmail.com',"נטע", "acamol"),
+#           ('shahar.aizenbud@gmail.com', "שחר", "acamol")]
+#
+# c.executemany("INSERT INTO waiting VALUES (?,?,?)", values)
 
-c.executemany("INSERT INTO waiting VALUES (?,?,?)", values)
 
 
-
-c.execute('''CREATE TABLE waiting
-             (mail text, name text, med_name text)''')
+# c.execute('''CREATE TABLE waiting
+#              (mail text, name text, med_name text)''')
 
 
 conn.commit()
