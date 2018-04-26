@@ -7,6 +7,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script>
 <hi>Search Medication</hi>
 
 <input type="text" id="ti">
@@ -57,14 +58,10 @@ function hi() {
                 const inputTag1 = document.getElementById('ti')
                 const inputTag2 = document.getElementById('ti')
                 const inputTag3 = document.getElementById('ti')
-                var mail = inputTag1.value;
-                var name = inputTag2.value;
-                var med = inputTag3.value;
-                params = { mail:str(mail) , name:str(name), med:str(med)};
-                var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-                var xhttp = new XMLHttpRequest();
-                xhttp.open("GET", "/add_waiting?" + str(queryString), true);
-                xhttp.send();
+                var mailVal = inputTag1.value;
+                var nameVal = inputTag2.value;
+                var medVal = inputTag3.value;
+				$.post( "/add_waiting", JSON.stringify({mail:mailVal, name:nameVal, med:medVal}));
                 inputTag1.innerHTML = "";
                 inputTag2.innerHTML = "";
                 inputTag3.innerHTML = "";
