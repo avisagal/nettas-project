@@ -5,19 +5,10 @@ function sendToDB(){
     var inputMedName = document.getElementById("inputMedName").value;
     var inputExpirationDate =document.getElementById("inputExpirationDate").value;
     var inputAmount =document.getElementById("Amount").value;
-<<<<<<< HEAD
     var isChecked =document.getElementById("gridCheck").isChecked;
     $.post( "/add", { med_name:inputMedName, date:inputExpirationDate, amount:inputAmount, is_closed:isChecked, city:inputCity, owner_mail:inputEmail, owner_name:inputpersonName });
 //   .done(function( data ) {
 //     alert( "Data Loaded: " + data );
 //   });
 }
-=======
-    var isChecked =document.getElementById("gridCheck").value;
-    console.log("here");
-    $.post( "/add", {med_name:inputMedName, date:inputExpirationDate, amount:inputAmount, is_closed:isChecked, city:inputCity, owner_mail:inputEmail, owner_name:inputpersonName })
-   .done(function( data ) {
-     alert( "Data Loaded: " + data );
-   });
-}
->>>>>>> 6fb55505105aad0639cf14fa1fed4f2afeae9a76
+    

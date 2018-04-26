@@ -51,33 +51,11 @@
                     </label> -->
                     </div>
                 </div>
-<<<<<<< HEAD
             <button onclick="sendToDB()" type="submit" class="btn btn-info">Insert To Data Base</button>
           </form>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/superhero/bootstrap.min.css" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="script.js" />
-=======
-            <button onclick="sendToDB()" class="btn btn-info">Insert To Data Base</button>
-          </div>
-    <script>
-        function sendToDB(){
-            var inputpersonName = document.getElementById("inputpersonName").value;
-            var inputEmail = document.getElementById("inputEmail").value;
-            var inputCity = document.getElementById("inputCity").value;
-            var inputMedName = document.getElementById("inputMedName").value;
-            var inputExpirationDate =document.getElementById("inputExpirationDate").value;
-            var inputAmount =document.getElementById("Amount").value;
-            var isChecked =document.getElementById("gridCheck").value;
-            //var isChecked = $('#gridCheck').is(":checked");
-            $.post( "/add", {med_name:inputMedName, date:inputExpirationDate, amount:inputAmount, is_closed:isChecked, city:inputCity, owner_mail:inputEmail, owner_name:inputpersonName })
-           .done(function( data ) {
-             alert( "Data Loaded: " + data );
-           });
-        }
-
-    </script>
->>>>>>> 6fb55505105aad0639cf14fa1fed4f2afeae9a76
 </body>
 </html>
