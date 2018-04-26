@@ -30,12 +30,12 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="439">
+              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="18" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
-                <marker date="1524744873688" expanded="true" signature="537:771" ph="select meds.... meds" />
-                <marker date="1524744873688" expanded="true" signature="537:828" ph="select meds.... meds" />
+                <marker date="1524745253293" expanded="true" signature="537:771" ph="select meds.... meds" />
+                <marker date="1524745253293" expanded="true" signature="537:828" ph="select meds.... meds" />
               </folding>
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1850">
+            <state relative-caret-position="1400">
               <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
               <folding />
             </state>
@@ -421,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524744485883</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="html">
+      <created>1524744896686</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1524744896686</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -474,17 +481,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <marker date="1524744873688" expanded="true" signature="537:771" ph="select meds.... meds" />
-            <marker date="1524744873688" expanded="true" signature="537:828" ph="select meds.... meds" />
+            <marker date="1524745253293" expanded="true" signature="537:771" ph="select meds.... meds" />
+            <marker date="1524745253293" expanded="true" signature="537:828" ph="select meds.... meds" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1850">
-          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -511,14 +510,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1400">
+          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="439">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="18" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <marker date="1524744873688" expanded="true" signature="537:771" ph="select meds.... meds" />
-            <marker date="1524744873688" expanded="true" signature="537:828" ph="select meds.... meds" />
+            <marker date="1524745253293" expanded="true" signature="537:771" ph="select meds.... meds" />
+            <marker date="1524745253293" expanded="true" signature="537:828" ph="select meds.... meds" />
           </folding>
         </state>
       </provider>

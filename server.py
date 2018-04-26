@@ -36,6 +36,7 @@ def query(name):
 
     return json_return
 
+@app.route("/query/<name>")
 
 if __name__ == "__main__":
     app.run()
