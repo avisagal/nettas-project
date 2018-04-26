@@ -75,6 +75,8 @@ def create_msg_giver(mail_getter, name_getter):
 
 @app.route("/select_item", methods = ["POST"])
 def select_item():
+
+     #in args i need: uid of giver, mail_getter, name_getter
     data = request.args
     uid_tuple = (data["uid"], )
     c.execute('''select mail, name
