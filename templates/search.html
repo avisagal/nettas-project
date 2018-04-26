@@ -53,7 +53,7 @@ function hi() {
   	convertToTable(data);
   })
 
-              function sendForMail(){
+                             function sendForMail(){
                 const inputTag1 = document.getElementById('ti')
                 const inputTag2 = document.getElementById('ti')
                 const inputTag3 = document.getElementById('ti')
@@ -63,8 +63,11 @@ function hi() {
                 params = { mail:str(mail) , name:str(name), med:str(med)};
                 var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
                 var xhttp = new XMLHttpRequest();
-                xhttp.open("GET", "/add_waiting" + str(queryString), true);
+                xhttp.open("GET", "/add_waiting?" + str(queryString), true);
                 xhttp.send();
+                inputTag1.innerHTML = "";
+                inputTag2.innerHTML = "";
+                inputTag3.innerHTML = "";
             }
 }
 
