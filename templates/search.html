@@ -20,12 +20,9 @@
 <button onclick="sendForMail()"> update state</button>
 <script>
 const inputTag = document.getElementById('ti');
-<<<<<<< HEAD
             const inputTag1 = document.getElementById('t2')
             const inputTag2 = document.getElementById('t3')
             const inputTag3 = document.getElementById('t4')
-=======
->>>>>>> b742bd3ef83516531481b60b21d76b8510de882e
     function convertToTable(data){
         var table = document.createElement("table");
         table.className = "table table-dark";
@@ -53,17 +50,7 @@ const inputTag = document.getElementById('ti');
 function hi() {
   fetch(`/check=${inputTag.value}` ).then((response) => {return response.json()
   }).then(data => {
-<<<<<<< HEAD
   	convertToTable(data);
-=======
-
-  	convertToTable(data);
-    <!--const divElement = document.createElement('h1');-->
-	<!--divElement.id = "gh";-->
-    <!--document.body.appendChild(divElement);-->
-    <!--document.getElementById("gh").innerHTML = data;-->
-
->>>>>>> b742bd3ef83516531481b60b21d76b8510de882e
   })
 
               function sendForMail(){
@@ -75,6 +62,7 @@ function hi() {
                 var med = inputTag3.value;
                 params = { mail:str(mail) , name:str(name), med:str(med)};
                 var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+                var xhttp = new XMLHttpRequest();
                 xhttp.open("GET", "/add_waiting" + str(queryString), true);
                 xhttp.send();
             }
