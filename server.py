@@ -26,7 +26,11 @@ def query(name):
     conn = sqlite3.connect('medicine_db.db')
     c = conn.cursor()
     name = (name,)
-    c.execute('select * from meds where med_name = ? collate nocase', name)
+    c.execute('''select meds.uid, meds.med_name, meds.amount, meds.city,
+                  meds.expiration_data, meds.is_closed, meds_data.picture
+                  from meds
+                  inner join meds_data on meds.med_name = meds_data.med_name
+                  where meds.med_name = ? collate nocase''', name)
     json_return = json.dumps(c.fetchall())
     conn.close()
 
