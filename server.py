@@ -8,9 +8,10 @@ app = Flask(__name__)
 def index():
     return render_template("search.html")
 
-@app.route("/check=<name>")
-def check(name):
-    return json.dumps({name:'b'})
+# @app.route("/check=<name>")
+# def check(name):
+#     print(name)
+#     return json.dumps({'b':name})
 
 @app.route("/search")
 def search():
@@ -21,8 +22,8 @@ def search():
 # data = request.args
 # name = (data["name"],)
 
-@app.route("/query/<name>")
-def query(name):
+@app.route("/check=<name>")
+def check(name):
     conn = sqlite3.connect('medicine_db.db')
     c = conn.cursor()
     name = (name,)
@@ -34,7 +35,7 @@ def query(name):
     json_return = json.dumps(c.fetchall())
     conn.close()
 
-    return json_return
+    return jsonify(json_return)
 
 @app.route("/add", methods=['POST'])
 def add():
