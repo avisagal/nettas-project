@@ -7,49 +7,69 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 <body>
-<hi>My App</hi>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script>
+<hi>Search Medication</hi>
 
-<input type="text" id="ti"></input>
-<button onclick="hi()"> click here</button>
+<input type="text" id="ti">
+<button onclick="hi()"> search</button> <br><br><br>
+<hi>user mail</hi>
+<input type="text" id="t2">
+<hi>user name</hi>
+<input type="text" id="t3">
+<hi>Medication wanted</hi>
+<input type="text" id="t4">
+<button onclick="sendForMail()"> update state</button>
 <script>
 const inputTag = document.getElementById('ti');
-
-function convertToTabe(data){
-    var table = document.createElement("table");
-    table.setAttribute('class', "table table-dark");
-    document.body.appendChild(table);
-    // crateing the header of the file
-    var tr = table.insertRow(-1);
-    var col = ["uid", "medicane name", "expiration date", "amount", "is closed", "city", "owner name", "picture"]
-    for (var i = 0; i < col.length; i++) {
-        var th = document.createElement("th");      // TABLE HEADER.
-        th.innerHTML = col[i];
-        tr.appendChild(th);
-    }
-    for (var i = 0; i < data.length; i++) {
-
-        tr = table.insertRow(-1);
-
-        for (var j = 0; j < col.length; j++) {
-            var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = data[i][col[j]];
+            const inputTag1 = document.getElementById('t2')
+            const inputTag2 = document.getElementById('t3')
+            const inputTag3 = document.getElementById('t4')
+    function convertToTable(data){
+        var table = document.createElement("table");
+        table.className = "table table-dark";
+        document.body.appendChild(table);
+        // crateing the header of the file
+        var tr = table.insertRow(0);
+        var col = ["id", "medicine name", "expiration date", "amount", "is closed", "city", "owner name", "picture"]
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      // TABLE HEADER.
+            th.innerHTML = col[i];
+            tr.appendChild(th);
         }
-    }
+
+        for (var i = 0; i < Object.keys(data).length; i++) {
+            var ir = table.insertRow(i+1);
+            var varTemp = data[Object.keys(data)[i]];
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = ir.insertCell(j);
+                tabCell.innerHTML = varTemp[col[j]];
+            }
+        }
 }
 
 
 function hi() {
   fetch(`/check=${inputTag.value}` ).then((response) => {return response.json()
   }).then(data => {
-
-  	convertToTabe(data);
-    <!--const divElement = document.createElement('h1');-->
-	<!--divElement.id = "gh";-->
-    <!--document.body.appendChild(divElement);-->
-    <!--document.getElementById("gh").innerHTML = data;-->
-
+  	convertToTable(data);
   })
+
+
 }
+
+       function sendForMail(){
+                const inputTag1 = document.getElementById('t2');
+                const inputTag2 = document.getElementById('t3');
+                const inputTag3 = document.getElementById('t4');
+                var mailVal = inputTag1.value;
+                var nameVal = inputTag2.value;
+                var medVal = inputTag3.value;
+				$.post( "/add_waiting", {mail:mailVal, name:nameVal, med:medVal});
+				console.log({mail:mailVal, name:nameVal, med:medVal});
+                inputTag1.innerHTML = "";
+                inputTag2.innerHTML = "";
+                inputTag3.innerHTML = "";
+            }
 
 
 </script>
