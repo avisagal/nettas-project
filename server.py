@@ -47,9 +47,11 @@ def check(name):
 
     return json_return
 
+
 @app.route("/add_waiting", methods= ["POST"])
 def add_waiting():
-    details = (request.args["mail"], request.args["name"], request["med"])
+    data = request.form
+    details = (data["mail"], data["name"], data["med"])
     c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
     conn.commit()
     return
