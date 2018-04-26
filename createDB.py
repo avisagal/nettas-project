@@ -26,8 +26,15 @@ c = conn.cursor()
 
 #c.execute('''ALTER TABLE meds ADD COLUMN owner_name text;''')
 
-
-
+# values = [(2, 'Acamol', '2018-06-22', 20, 1, 'Jerusalem', 'avisagal41@gmail.com', 'avi'),
+#           (3, 'Advil', '2019-01-01', 15, 0, 'Jerusalem', 'netta.barak@gmail.com', 'netta'),
+#           (1, 'Malarone', '2018-05-01', 10, 0, 'Haifa', 'shahar.aizenbud@gmail.com', 'shahar'),
+#           (4, 'Malarone', '2018-07-04', 15, 1, 'Raanana', 'netta.barak@gmail.com', 'netta')]
+# c.executemany("INSERT INTO meds VALUES (?,?,?,?,?,?,?,?)", values)
+#
+# c.execute('''ALTER TABLE meds_data ADD COLUMN amount real;''')
+# c.execute('''ALTER TABLE meds_data ADD COLUMN description text;''')
+# c.execute('''ALTER TABLE meds_data ADD COLUMN manufacturer text;''')
 
 conn.commit()
 
