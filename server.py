@@ -47,20 +47,22 @@ def check(name):
 
     return json_return
 
-# @app.route("/add_waiting", methods= ["POST"])
-# def add_waiting():
-#     details = (request.args["mail"], request.args["name"], request["med"])
-#     c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
-#     conn.commit()
-#     return
-
-@app.route("/add_waiting")
+@app.route("/add_waiting", methods= ["POST"])
 def add_waiting():
-    details = (request.args.get("mail"), request.args.get("name"),
-               request.args.get("med"))
+    details = (request.args["mail"], request.args["name"], request["med"])
     c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
     conn.commit()
     return
+
+# @app.route("/add_waiting")
+# def add_waiting():
+#     details = (request.args.get("mail"), request.args.get("name"),
+#                request.args.get("med"))
+#
+#     print("klklk")
+#     c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
+#     conn.commit()
+#     return
 
 
 def send_mails_to_waiting_list(med_name):
