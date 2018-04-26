@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, render_template, request
 import sqlite3
 import json
+import mich
 
 app = Flask(__name__)
 
@@ -26,6 +27,12 @@ def search():
 def check(name):
     conn = sqlite3.connect('medicine_db.db')
     c = conn.cursor()
+    name = mich.my_trans(name)
+    c.execute('''select distinct med_name from meds_data''')
+    all_meds = []
+    for med in c.fetchall():
+        all_meds.append(med[0])
+    name = mich.best_word(all_meds, name)
     name = (name,)
     c.execute('''select meds.uid, meds.med_name, meds.amount, meds.city,
                   meds.expiration_data, meds.is_closed, meds_data.picture
@@ -41,6 +48,9 @@ def check(name):
 def add():
     data = request.args
     uid = int(data["uid"])
+    med_name = data["med_name"]
+
+
 
 if __name__ == "__main__":
     app.run()
