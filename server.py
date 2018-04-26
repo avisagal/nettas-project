@@ -68,13 +68,12 @@ def send_mails_to_waiting_list(med_name):
 @app.route("/add", methods=['POST'])
 def add():
     global uid
-    data = request.args
-    print(data)
+    data = request.form
     med_name = mich.best_word(all_meds, data["med_name"])
     if med_name is None:
         return jsonify(json.dumps({'state': 1}))
     details = (uid, med_name, data["date"], float(data["amount"]), data["is_closed"],
-               data["city"], data["mail"], data["name"])
+               data["city"], data["owner_mail"], data["owner_name"])
     uid += 1
     c.execute("INSERT INTO meds VALUES (?,?,?,?,?,?,?,?)", details)
     send_mails_to_waiting_list(med_name)
