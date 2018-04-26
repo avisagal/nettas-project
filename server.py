@@ -3,15 +3,14 @@ import sqlite3
 import json
 import mich
 
+SUB_MED_FOUND = "כותרת למצאנו תרופה"
+BODY_MED_FOUND = "טקסט למצאנו תרופה"
+
 app = Flask(__name__)
 
 @app.route("/")
 def index():
     return render_template("search.html")
-
-# for post:
-# data = request.args
-# name = (data["name"],)
 
 @app.route("/check=<name>")
 def check(name):
@@ -27,6 +26,23 @@ def check(name):
 
     return jsonify(json_return)
 
+@app.route("/add_waiting", methods= ["POST"])
+def add_waiting():
+    details = (request.args["mail"], request.args["name"], request["med"])
+    c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
+    conn.commit()
+    return
+
+
+def send_mails_to_waiting_list(med_name):
+    med_tuple = (med_name,)
+    c.execute('''select mail, name
+                      from waiting
+                      where med_name = ? collate nocase''', med_tuple)
+    data = c.fetchall()
+    if data:
+        for tup in data:
+            mich.send_mail(tup[0], tup[1], SUB_MED_FOUND, BODY_MED_FOUND)
 
 @app.route("/add", methods=['POST'])
 def add():
@@ -39,6 +55,7 @@ def add():
                data["city"], data["mail"], data["name"])
     uid += 1
     c.execute("INSERT INTO meds VALUES (?,?,?,?,?,?,?,?)", details)
+    send_mails_to_waiting_list(med_name)
     conn.commit()
     return jsonify(json.dumps({'state': 0}))
 
