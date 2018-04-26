@@ -5,12 +5,32 @@ import mich
 
 SUB_MED_FOUND = "כותרת למצאנו תרופה"
 BODY_MED_FOUND = "טקסט למצאנו תרופה"
+HEADERS = ["id", "medicine name", "amount", "city", "expiration date", "is closed", "owner name", "picture"]
+
 
 app = Flask(__name__)
+
+def translate_to_dict(list_data):
+    dict_id = 1
+    outer_dict = {}
+    for cur_tuple in list_data:
+        inner_dict = {}
+        for i in range(8):
+            inner_dict[HEADERS[i]] = cur_tuple[i]
+        outer_dict[dict_id] = inner_dict
+        dict_id += 1
+
+    return outer_dict
+
 
 @app.route("/")
 def index():
     return render_template("search.html")
+
+@app.route("/insert")
+def insert():
+    return render_template("insert.html")
+
 
 @app.route("/check=<name>")
 def check(name):
@@ -22,9 +42,10 @@ def check(name):
                   from meds
                   inner join meds_data on meds.med_name = meds_data.med_name
                   where meds.med_name = ? collate nocase''', name)
-    json_return = json.dumps(c.fetchall())
+    dict_result = translate_to_dict(c.fetchall())
+    json_return = json.dumps(dict_result)
 
-    return jsonify(json_return)
+    return json_return
 
 @app.route("/add_waiting", methods= ["POST"])
 def add_waiting():
@@ -44,10 +65,41 @@ def send_mails_to_waiting_list(med_name):
         for tup in data:
             mich.send_mail(tup[0], tup[1], SUB_MED_FOUND, BODY_MED_FOUND)
 
+def create_msg_getter(mail_giver, name_giver):
+    return ("talk to the giver!", "talk to" + name_giver + " in mail: " + mail_giver)
+
+def create_msg_giver(mail_getter, name_getter):
+    return (
+    "talk to the getter!", "talk to" + name_getter + " in mail: " + mail_getter)
+
+
+@app.route("/select_item", methods = ["POST"])
+def select_item():
+
+     #in args i need: uid of giver, mail_getter, name_getter
+    data = request.args
+    uid_tuple = (data["uid"], )
+    c.execute('''select mail, name
+                 from meds
+                 where uid = ? collate nocase''', uid_tuple)
+    mail_giver, name_giver = c.fetchall()
+    msg_to_getter = create_msg_getter(mail_giver, name_giver)
+    mich.send_mail(request.args["mail_getter"], request.args["name_getter"],
+                   msg_to_getter[0], msg_to_getter[1])
+
+    msg_to_giver = create_msg_giver(request.args["mail_getter"], request.args["name_getter"])
+    mich.send_mail(mail_giver, name_giver, msg_to_getter[0], msg_to_getter[1])
+
+    # here we need to delete from the DB the uid row.
+
+    return
+
+
 @app.route("/add", methods=['POST'])
 def add():
     global uid
     data = request.args
+    print(data)
     med_name = mich.best_word(all_meds, data["med_name"])
     if med_name is None:
         return jsonify(json.dumps({'state': 1}))
