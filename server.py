@@ -3,15 +3,30 @@ import sqlite3
 import json
 import mich
 
+SUB_MED_FOUND = "כותרת למצאנו תרופה"
+BODY_MED_FOUND = "טקסט למצאנו תרופה"
+HEADERS = ["id", "medicine name", "amount", "city", "expiration date", "is closed", "owner name", "picture"]
+
+
 app = Flask(__name__)
+
+def translate_to_dict(list_data):
+    dict_id = 1
+    outer_dict = {}
+    for cur_tuple in list_data:
+        inner_dict = {}
+        for i in range(8):
+            inner_dict[HEADERS[i]] = cur_tuple[i]
+        outer_dict[dict_id] = inner_dict
+        dict_id += 1
+
+    return outer_dict
+
 
 @app.route("/")
 def index():
     return render_template("search.html")
 
-# for post:
-# data = request.args
-# name = (data["name"],)
 
 @app.route("/check=<name>")
 def check(name):
@@ -23,7 +38,7 @@ def check(name):
                   from meds
                   inner join meds_data on meds.med_name = meds_data.med_name
                   where meds.med_name = ? collate nocase''', name)
-    json_return = json.dumps(c.fetchall())
+    json_return = json.dumps(translate_to_dict(c.fetchall()))
 
     return jsonify(json_return)
 
@@ -34,6 +49,16 @@ def add_waiting():
     conn.commit()
     return
 
+
+def send_mails_to_waiting_list(med_name):
+    med_tuple = (med_name,)
+    c.execute('''select mail, name
+                      from waiting
+                      where med_name = ? collate nocase''', med_tuple)
+    data = c.fetchall()
+    if data:
+        for tup in data:
+            mich.send_mail(tup[0], tup[1], SUB_MED_FOUND, BODY_MED_FOUND)
 
 @app.route("/add", methods=['POST'])
 def add():
@@ -46,6 +71,7 @@ def add():
                data["city"], data["mail"], data["name"])
     uid += 1
     c.execute("INSERT INTO meds VALUES (?,?,?,?,?,?,?,?)", details)
+    send_mails_to_waiting_list(med_name)
     conn.commit()
     return jsonify(json.dumps({'state': 0}))
 
