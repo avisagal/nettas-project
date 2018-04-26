@@ -45,6 +45,11 @@ const inputTag = document.getElementById('ti');
                 tabCell.innerHTML = varTemp[col[j]];
             }
         }
+        if (data != null) {
+			var table = document.createElement("table");
+			table.className = "table table-dark";
+			document.body.appendChild(table);
+		}
 }
 
 
