@@ -104,7 +104,23 @@ def select_item():
     msg_to_giver = create_msg_giver(request.args["mail_getter"], request.args["name_getter"])
     mich.send_mail(mail_giver, name_giver, msg_to_getter[0], msg_to_getter[1])
 
-    # here we need to delete from the DB the uid row.
+    c.execute('''select med_name
+                     from meds
+                     where uid = ?''', uid_tuple)
+    medication = c.fetchone()[0]
+
+    # delete the med
+    c.execute('''delete
+                from meds
+                where uid = ?''', uid_tuple)
+
+    # delete the request
+
+    waiting_details = (request.args["mail_getter"], medication)
+    c.execute('''delete
+                from waiting
+                where mail = ? and med_name = ? collate nocase''', waiting_details)
+    conn.commit()
 
     return
 
@@ -120,8 +136,8 @@ def add():
                data["city"], data["owner_mail"], data["owner_name"])
     uid += 1
     c.execute("INSERT INTO meds VALUES (?,?,?,?,?,?,?,?)", details)
-    send_mails_to_waiting_list(med_name)
     conn.commit()
+    send_mails_to_waiting_list(med_name)
     return jsonify(json.dumps({'state': 0}))
 
 
@@ -136,3 +152,5 @@ if __name__ == "__main__":
     uid = c.fetchone()[0] + 1
     app.run()
     conn.close()
+
+
