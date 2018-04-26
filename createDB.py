@@ -15,13 +15,14 @@ c = conn.cursor()
 # c.execute('''CREATE TABLE meds_data
 #              (med_name text, picture text)''')
 
-values = [('Malarone', 'https://www.doctorfox.co.uk/imgs-products/zoom/malarone-pills.jpg'),
-          ('Acamol', 'http://www.pilula.co.il/~pilula5/images/stories/virtuemart/product/acamol%20caps.jpg'),
-          ('Advil', 'https://images-na.ssl-images-amazon.com/images/I/917DL6AA0PL._SY355_.jpg'),
-          ('Meliane', 'http://www.drug.co.il/ps/109-12-29094-00.jpg'),
-          ]
-c.executemany("INSERT INTO meds_data VALUES (?,?)", values)
+# values = [('Malarone', 'https://www.doctorfox.co.uk/imgs-products/zoom/malarone-pills.jpg'),
+#           ('Acamol', 'http://www.pilula.co.il/~pilula5/images/stories/virtuemart/product/acamol%20caps.jpg'),
+#           ('Advil', 'https://images-na.ssl-images-amazon.com/images/I/917DL6AA0PL._SY355_.jpg'),
+#           ('Meliane', 'http://www.drug.co.il/ps/109-12-29094-00.jpg'),
+#           ]
+# c.executemany("INSERT INTO meds_data VALUES (?,?)", values)
 
+c.execute("INSERT INTO meds VALUES (4, 'Malarone', '2018-07-04', 15, NULL, 'Raanana', 'netta.barak@gmail.com')")
 
 
 

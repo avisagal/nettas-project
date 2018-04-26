@@ -1,22 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
 <input type="text" id="ti"></input>
-<button onclick="hi()"> click here</button>>
+<button onclick="hi()"> click here</button>
 <script>
-const inputTag = document.getElementById('ti')
+const inputTag = document.getElementById('ti');
 function hi() {
-//   document.body.removeChild
-  fetch(`/check=${inputTag.value}`, {
-    method: 'GET'
-  }).then((response) => {
-    return response.json()
+//   document.body.removeChild-->
+  fetch(`/check=${inputTag.value}` ).then((response) => {return response.json()
   }).then(data => {
-    // take data, map to elements
-    const divElement = document.createElement('div')
-    document.body.appendChild(divElement)
-    document.getElementsByName(divElement).innerHTML = data["key"];
+    // take data, map to elements-->
+    const divElement = document.createElement('h1');
+	divElement.id = "gh";
+    document.body.appendChild(divElement);
+    document.getElementById("gh").innerHTML = data;
   })
 }
 </script>
-
+</body>
+</html>
 
 <!-- <!DOCTYPE html>
 <html>
