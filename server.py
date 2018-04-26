@@ -91,14 +91,14 @@ def create_msg_giver(mail_getter, name_getter):
 def select_item():
 
      #in args i need: uid of giver, mail_getter, name_getter
-    data = request.args
+    data = request.form
     uid_tuple = (data["uid"], )
     c.execute('''select mail, name
                  from meds
                  where uid = ? collate nocase''', uid_tuple)
     mail_giver, name_giver = c.fetchall()
     msg_to_getter = create_msg_getter(mail_giver, name_giver)
-    mich.send_mail(request.args["mail_getter"], request.args["name_getter"],
+    mich.send_mail(data["mail_getter"], data["name_getter"],
                    msg_to_getter[0], msg_to_getter[1])
 
     msg_to_giver = create_msg_giver(request.args["mail_getter"], request.args["name_getter"])
