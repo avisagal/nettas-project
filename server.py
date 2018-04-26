@@ -38,9 +38,10 @@ def check(name):
                   from meds
                   inner join meds_data on meds.med_name = meds_data.med_name
                   where meds.med_name = ? collate nocase''', name)
-    json_return = json.dumps(translate_to_dict(c.fetchall()))
+    dict_result = translate_to_dict(c.fetchall())
+    json_return = json.dumps(dict_result)
 
-    return jsonify(json_return)
+    return json_return
 
 @app.route("/add_waiting", methods= ["POST"])
 def add_waiting():
