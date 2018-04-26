@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd0399e9-a17d-41bb-af2c-c0e8e2a7051f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/nettas-project.iml" afterPath="$PROJECT_DIR$/.idea/nettas-project.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/medicine_db.db" afterPath="$PROJECT_DIR$/medicine_db.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createDB.py" afterPath="$PROJECT_DIR$/createDB.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
     </list>
     <ignored path="code.iws" />
@@ -18,7 +18,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/nettas-project$server.coverage" NAME="server Coverage Results" MODIFIED="1524744873704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nettas-project$mich.coverage" NAME="mich Coverage Results" MODIFIED="1524746011625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nettas-project$createDB.coverage" NAME="createDB Coverage Results" MODIFIED="1524752353867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nettas-project$server.coverage" NAME="server Coverage Results" MODIFIED="1524751633919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -32,12 +34,13 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+            <state relative-caret-position="384">
+              <caret line="37" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="13" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
-                <marker date="1524745706419" expanded="true" signature="537:771" ph="select meds.... meds" />
-                <marker date="1524745706419" expanded="true" signature="537:828" ph="select meds.... meds" />
+                <marker date="1524752956492" expanded="true" signature="426:465" ph="select disti... meds_data" />
+                <marker date="1524752956492" expanded="true" signature="627:861" ph="select meds.... meds" />
+                <marker date="1524752956492" expanded="true" signature="627:918" ph="select meds.... meds" />
               </folding>
             </state>
           </provider>
@@ -46,9 +49,11 @@
       <file leaf-file-name="mich.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mich.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="109">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +71,8 @@
       <file leaf-file-name="DBexample.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DBexample.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="33" />
               <folding>
                 <marker date="1524735931287" expanded="true" signature="110:201" ph="CREATE TABLE... stocks" />
                 <marker date="1524735931287" expanded="true" signature="218:281" ph="INSERT INTO stocks... " />
@@ -83,10 +88,17 @@
       <file leaf-file-name="createDB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createDB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="250">
+              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
               <folding>
-                <marker date="1524744116973" expanded="true" signature="1093:1127" ph="INSERT INTO meds_data... " />
+                <marker date="1524752454852" expanded="true" signature="90:249" ph="CREATE TABLE... meds" />
+                <marker date="1524752454852" expanded="true" signature="1105:1139" ph="INSERT INTO meds_data... " />
+                <marker date="1524752454852" expanded="true" signature="1163:1262" ph="INSERT INTO meds... " />
+                <marker date="1524752454852" expanded="true" signature="1280:1323" ph="ALTER TABLE meds... " />
+                <marker date="1524752454852" expanded="true" signature="1726:1767" ph="INSERT INTO meds... " />
+                <marker date="1524752454852" expanded="true" signature="1795:1839" ph="ALTER TABLE meds_data... " />
+                <marker date="1524752454852" expanded="true" signature="1860:1909" ph="ALTER TABLE meds_data... " />
+                <marker date="1524752454852" expanded="true" signature="1930:1980" ph="ALTER TABLE meds_data... " />
               </folding>
             </state>
           </provider>
@@ -95,10 +107,10 @@
       <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1400">
-              <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+            <state relative-caret-position="425">
+              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding>
-                <marker date="1524744429154" expanded="true" signature="1971:2260" ph="..." />
+                <marker date="1524747544831" expanded="true" signature="31:580" ph="..." />
               </folding>
             </state>
           </provider>
@@ -121,6 +133,7 @@
       <list>
         <option value="$PROJECT_DIR$/templates/search.html" />
         <option value="$PROJECT_DIR$/mich.py" />
+        <option value="$PROJECT_DIR$/createDB.py" />
         <option value="$PROJECT_DIR$/server.py" />
       </list>
     </option>
@@ -223,7 +236,7 @@
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/nettas-project.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mich.py</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -231,7 +244,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/mich.py</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -320,7 +332,7 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-  <component name="RunManager" selected="Python.server">
+  <component name="RunManager" selected="Python.createDB">
     <configuration default="false" name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -337,6 +349,93 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="mich" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="nettas-project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mich.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="createDB" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="nettas-project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createDB.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="nettas-project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="nettas-project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="nettas-project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -368,6 +467,16 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <module name="nettas-project" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -480,12 +589,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.server" />
+      <item index="1" class="java.lang.String" itemvalue="Python.mich" />
+      <item index="2" class="java.lang.String" itemvalue="Python.createDB" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.server" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.createDB" />
+        <item index="1" class="java.lang.String" itemvalue="Python.server" />
+        <item index="2" class="java.lang.String" itemvalue="Python.mich" />
       </list>
     </recent_temporary>
   </component>
@@ -507,7 +620,35 @@
       <option name="project" value="LOCAL" />
       <updated>1524744485883</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="html">
+      <created>1524745709389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1524745709389</updated>
+    </task>
+    <task id="LOCAL-00003" summary="html">
+      <created>1524747547383</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524747547383</updated>
+    </task>
+    <task id="LOCAL-00004" summary="html">
+      <created>1524751149983</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524751149983</updated>
+    </task>
+    <task id="LOCAL-00005" summary="html">
+      <created>1524752058071</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1524752058071</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -520,7 +661,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3196347" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -560,8 +701,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <marker date="1524745706419" expanded="true" signature="537:771" ph="select meds.... meds" />
-            <marker date="1524745706419" expanded="true" signature="537:828" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="426:465" ph="select disti... meds_data" />
+            <marker date="1524752956492" expanded="true" signature="627:861" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="627:918" ph="select meds.... meds" />
           </folding>
         </state>
       </provider>
@@ -594,7 +736,7 @@
         <state relative-caret-position="1400">
           <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
           <folding>
-            <marker date="1524744429154" expanded="true" signature="1971:2260" ph="..." />
+            <marker date="1524747544831" expanded="true" signature="31:580" ph="..." />
           </folding>
         </state>
       </provider>
@@ -605,8 +747,9 @@
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="18" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <marker date="1524745706419" expanded="true" signature="537:771" ph="select meds.... meds" />
-            <marker date="1524745706419" expanded="true" signature="537:828" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="426:465" ph="select disti... meds_data" />
+            <marker date="1524752956492" expanded="true" signature="627:861" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="627:918" ph="select meds.... meds" />
           </folding>
         </state>
       </provider>
@@ -617,8 +760,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <marker date="1524745706419" expanded="true" signature="537:771" ph="select meds.... meds" />
-            <marker date="1524745706419" expanded="true" signature="537:828" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="426:465" ph="select disti... meds_data" />
+            <marker date="1524752956492" expanded="true" signature="627:861" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="627:918" ph="select meds.... meds" />
           </folding>
         </state>
       </provider>
@@ -651,7 +795,7 @@
         <state relative-caret-position="1850">
           <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
           <folding>
-            <marker date="1524744429154" expanded="true" signature="1971:2260" ph="..." />
+            <marker date="1524747544831" expanded="true" signature="31:580" ph="..." />
           </folding>
         </state>
       </provider>
@@ -662,18 +806,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <marker date="1524745706419" expanded="true" signature="537:771" ph="select meds.... meds" />
-            <marker date="1524745706419" expanded="true" signature="537:828" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="426:465" ph="select disti... meds_data" />
+            <marker date="1524752956492" expanded="true" signature="627:861" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="627:918" ph="select meds.... meds" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+        <state relative-caret-position="425">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding>
-            <marker date="1524744429154" expanded="true" signature="1971:2260" ph="..." />
+            <marker date="1524747544831" expanded="true" signature="31:580" ph="..." />
           </folding>
         </state>
       </provider>
@@ -688,16 +833,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mich.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="109">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DBexample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="375">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="33" />
           <folding>
             <marker date="1524735931287" expanded="true" signature="110:201" ph="CREATE TABLE... stocks" />
             <marker date="1524735931287" expanded="true" signature="218:281" ph="INSERT INTO stocks... " />
@@ -711,22 +858,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="250">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding>
-            <marker date="1524744116973" expanded="true" signature="1093:1127" ph="INSERT INTO meds_data... " />
+            <marker date="1524752454852" expanded="true" signature="90:249" ph="CREATE TABLE... meds" />
+            <marker date="1524752454852" expanded="true" signature="1105:1139" ph="INSERT INTO meds_data... " />
+            <marker date="1524752454852" expanded="true" signature="1163:1262" ph="INSERT INTO meds... " />
+            <marker date="1524752454852" expanded="true" signature="1280:1323" ph="ALTER TABLE meds... " />
+            <marker date="1524752454852" expanded="true" signature="1726:1767" ph="INSERT INTO meds... " />
+            <marker date="1524752454852" expanded="true" signature="1795:1839" ph="ALTER TABLE meds_data... " />
+            <marker date="1524752454852" expanded="true" signature="1860:1909" ph="ALTER TABLE meds_data... " />
+            <marker date="1524752454852" expanded="true" signature="1930:1980" ph="ALTER TABLE meds_data... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        <state relative-caret-position="384">
+          <caret line="37" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="13" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <marker date="1524745706419" expanded="true" signature="537:771" ph="select meds.... meds" />
-            <marker date="1524745706419" expanded="true" signature="537:828" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="426:465" ph="select disti... meds_data" />
+            <marker date="1524752956492" expanded="true" signature="627:861" ph="select meds.... meds" />
+            <marker date="1524752956492" expanded="true" signature="627:918" ph="select meds.... meds" />
           </folding>
         </state>
       </provider>
