@@ -1,124 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/superhero/bootstrap.min.css" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div>
-        <img src="baner.png" class="img-fluid" alt = "Responsive image">
-        <img src="p1.png" class="img-fluid" alt = "Responsive image">
+        <img src="baner.png" class="img-fluid" alt="Responsive image">
+        <img src="p1.png" class="img-fluid" alt="Responsive image">
     </div>
     <div>
         <!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script> -->
-        <img src="p2.png" class="img-fluid" alt = "Responsive image">
-        <hi>Search Medication</hi>
-        <input type="text" id="ti">
-        <button onclick="hi()"> search</button> <br><br><br>
-        <hi>user mail</hi>
-        <input type="text" id="t2">
-        <hi>user name</hi>
-        <input type="text" id="t3">
-        <hi>Medication wanted</hi>
-        <input type="text" id="t4">
-        <button onclick="sendForMail()"> update state</button>
-        <script>
-        const inputTag = document.getElementById('ti');
-                    const inputTag1 = document.getElementById('t2')
-                    const inputTag2 = document.getElementById('t3')
-                    const inputTag3 = document.getElementById('t4')
-            function convertToTable(data){
-                var table = document.createElement("table");
-                table.className = "table table-dark";
-                document.body.appendChild(table);
-                // crateing the header of the file
-                var tr = table.insertRow(0);
-                var col = ["id", "medicine name", "expiration date", "amount", "is closed", "city", "owner name", "picture"]
-                for (var i = 0; i < col.length; i++) {
-                    var th = document.createElement("th");      // TABLE HEADER.
-                    th.innerHTML = col[i];
-                    tr.appendChild(th);
-                }
+        <img src="p2.png" class="img-fluid" alt="Responsive image">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <!-- <hi>Search Medication</hi> -->
 
-                for (var i = 0; i < Object.keys(data).length; i++) {
-                    var ir = table.insertRow(i+1);
-                    var varTemp = data[Object.keys(data)[i]];
-                    for (var j = 0; j < col.length; j++) {
-                        var tabCell = ir.insertCell(j);
-                        tabCell.innerHTML = varTemp[col[j]];
-                    }
+                <!-- <input type="personName" class="form-control" id="inputpersonName" placeholder="Jane Doe"> -->
+                <!-- <label for="inputpersonName">Search Medication</label> -->
+                <input class="form-control" type="text" id="ti" align = "center" >
+                <button onclick="hi()" type="submit" class="btn btn-info"> search Medicine</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputpersonName">user mail</label>
+                <!-- <hi>user mail</hi> -->
+                <input class="form-control" type="text" id="t2">
+            </div>
+        </div>
+        <!-- <hi>user name</hi> -->
+        <div class="form-group col-md-6">
+            <label for="inputpersonName">user name</label>
+            <input class="form-control" type="text" id="t3">
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputpersonName">Medication wanted</label>
+        <!-- <hi>Medication wanted</hi> -->
+        <input class="form-control" type="text" id="t4">
+    </div>
+    <button onclick="sendForMail()"> update state</button>
+    </div>
+    </div>
+    </div>
+    <script>
+        const inputTag = document.getElementById('ti');
+        const inputTag1 = document.getElementById('t2')
+        const inputTag2 = document.getElementById('t3')
+        const inputTag3 = document.getElementById('t4')
+        function convertToTable(data) {
+            var table = document.createElement("table");
+            table.className = "table table-dark";
+            document.body.appendChild(table);
+            // crateing the header of the file
+            var tr = table.insertRow(0);
+            var col = ["id", "medicine name", "expiration date", "amount", "is closed", "city", "owner name", "picture"]
+            for (var i = 0; i < col.length; i++) {
+                var th = document.createElement("th");      // TABLE HEADER.
+                th.innerHTML = col[i];
+                tr.appendChild(th);
+            }
+
+            for (var i = 0; i < Object.keys(data).length; i++) {
+                var ir = table.insertRow(i + 1);
+                var varTemp = data[Object.keys(data)[i]];
+                for (var j = 0; j < col.length; j++) {
+                    var tabCell = ir.insertCell(j);
+                    tabCell.innerHTML = varTemp[col[j]];
                 }
+            }
         }
 
 
         function hi() {
-        fetch(`/check=${inputTag.value}` ).then((response) => {return response.json()
-        }).then(data => {
-            convertToTable(data);
-        })
+            fetch(`/check=${inputTag.value}`).then((response) => {
+                return response.json()
+            }).then(data => {
+                convertToTable(data);
+            })
 
 
         }
 
-            function sendForMail(){
-                        const inputTag1 = document.getElementById('t2');
-                        const inputTag2 = document.getElementById('t3');
-                        const inputTag3 = document.getElementById('t4');
-                        var mailVal = inputTag1.value;
-                        var nameVal = inputTag2.value;
-                        var medVal = inputTag3.value;
-                        $.post( "/add_waiting", {mail:mailVal, name:nameVal, med:medVal});
-                        inputTag1.innerHTML = "";
-                        inputTag2.innerHTML = "";
-                        inputTag3.innerHTML = "";
-                    }
+        function sendForMail() {
+            const inputTag1 = document.getElementById('t2');
+            const inputTag2 = document.getElementById('t3');
+            const inputTag3 = document.getElementById('t4');
+            var mailVal = inputTag1.value;
+            var nameVal = inputTag2.value;
+            var medVal = inputTag3.value;
+            $.post("/add_waiting", { mail: mailVal, name: nameVal, med: medVal });
+            inputTag1.innerHTML = "";
+            inputTag2.innerHTML = "";
+            inputTag3.innerHTML = "";
+        }
 
 
-        </script>
+    </script>
 
     </div>
     <div>
-            <img src="p3.png" class="img-fluid" alt = "Responsive image">
-            <div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputpersonName">what's your name?</label>
-                            <input type="personName" class="form-control" id="inputpersonName" placeholder="Jane Doe">
-                            </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="janedoe@gmail.com">
-                        </div>
-                        <div class="form-group col-md-6">
-                                <label for="inputCity">City</label>
-                                <input type="text" class="form-control" id="inputCity" placeholder="Jerusalem">
-                                </div>
+        <img src="p3.png" class="img-fluid" alt="Responsive image">
+        <!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/superhero/bootstrap.min.css"  crossorigin="anonymous"></script> --> -->
+        <div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputpersonName">what's your name?</label>
+                    <input type="personName" class="form-control" id="inputpersonName" placeholder="Jane Doe">
                     </div>
-                    <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputMedName">Medicine Name</label>
-                                <input type="text" class="form-control" id="inputMedName" >
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputExpirationDate">Expiration Date</label>
-                                <input type="date" class="form-control" id="inputExpirationDate">
-                            </div>
-                            <div class="form-group col-md-6">
-                                    <label for="Amount">Amount</label>
-                                    <input type="number" class="form-control" id="Amount">
-                                    </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">Is Closed?</label>
-                                <!-- <label class="form-check-label" for="gridCheck">
-                                    is Closed?
-                                </label> -->
-                                </div>
-                            </div>
-                        <button onclick="sendToDB()" type="submit" class="btn btn-info">Insert To Data Base</button>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="janedoe@gmail.com">
+                </div>
+                <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="Jerusalem">
                         </div>
-    </div>
+            </div>
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputMedName">Medicine Name</label>
+                        <input type="text" class="form-control" id="inputMedName" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputExpirationDate">Expiration Date</label>
+                        <input type="date" class="form-control" id="inputExpirationDate">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="Amount">Amount</label>
+                            <input type="number" class="form-control" id="Amount">
+                            </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            is Closed?
+                        </label>
+                        </div>
+                    </div>
+                <button onclick="sendToDB()" class="btn btn-info">Insert To Data Base</button>
+              </div>
+        <script>
+            function sendToDB(){
+                var inputpersonName = document.getElementById("inputpersonName").value;
+                var inputEmail = document.getElementById("inputEmail").value;
+                var inputCity = document.getElementById("inputCity").value;
+                var inputMedName = document.getElementById("inputMedName").value;
+                var inputExpirationDate =document.getElementById("inputExpirationDate").value;
+                var inputAmount =document.getElementById("Amount").value;
+                var isChecked =document.getElementById("gridCheck").value;
+                $.post( "/add", {med_name:inputMedName, date:inputExpirationDate, amount:inputAmount, is_closed:isChecked, city:inputCity, owner_mail:inputEmail, owner_name:inputpersonName })
+               .done(function( data ) {
+                 alert( "Data Loaded: " + data );
+               });
+            }
+    
+        </script>
 </body>
-</html>
 
+</html>
