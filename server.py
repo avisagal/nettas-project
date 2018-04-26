@@ -27,6 +27,7 @@ def check(name):
     conn = sqlite3.connect('medicine_db.db')
     c = conn.cursor()
     name = (name,)
+    c.execute('''select distinct med_name from meds_data''')
     c.execute('''select meds.uid, meds.med_name, meds.amount, meds.city,
                   meds.expiration_data, meds.is_closed, meds_data.picture
                   from meds
@@ -41,6 +42,7 @@ def check(name):
 def add():
     data = request.args
     uid = int(data["uid"])
+    name = int(data["uid"])
 
 if __name__ == "__main__":
     app.run()
