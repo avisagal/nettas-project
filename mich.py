@@ -69,4 +69,4 @@ def send_mail(address_mail, name, subject_text, body_text):
 
 
 if __name__ == "__main__":
-    send_mail("hassidm@gmail.com", "מיכאל", "מצאנו לך תרופה!", "נא לתקשר עם:")
+    send_mail("hassidm@gmail.com", "דורון", "מצאנו לך מחלה!", "נא לתקשר עם:")
