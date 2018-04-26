@@ -2,6 +2,7 @@ from fuzzywuzzy import fuzz
 from googletrans import Translator
 import smtplib
 
+HEADERS = ["id", "medicine name", "amount", "city", "expiration date", "is closed", "owner name", "picture"]
 
 def best_word(list_of_words, word_to_find):
     """
@@ -50,6 +51,18 @@ def send_mail(address_mail):
     server.sendmail(fromaddr, toaddrs, msg)
     server.quit()
 
+
+def translate_to_dict(list_data):
+    dict_id = 1
+    outer_dict = {}
+    for cur_tuple in list_data:
+        inner_dict = {}
+        for i in range(8):
+            inner_dict[HEADERS[i]] = cur_tuple[i]
+        outer_dict[dict_id] = inner_dict
+        dict_id += 1
+
+    return outer_dict
 
 if __name__ == "__main__":
     send_mail("hassidm@gmail.com")

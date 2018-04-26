@@ -37,6 +37,9 @@ c = conn.cursor()
 # c.execute('''ALTER TABLE meds_data ADD COLUMN manufacturer text;''')
 
 
+c.execute('''CREATE TABLE waiting
+             (mail text, name text, med_name text)''')
+
 
 conn.commit()
 
