@@ -1,5 +1,7 @@
 from fuzzywuzzy import fuzz
 from googletrans import Translator
+import smtplib
+
 
 def best_word(list_of_words, word_to_find):
     """
@@ -24,5 +26,31 @@ def my_trans(word):
     new = tran.translate("mmelron")
     return new.text
 
+
+def send_mail(address_mail):
+
+    # Specifying the from and to addresses
+
+    fromaddr = 'meditakeisrael@gmail.com'
+    toaddrs = address_mail
+
+    # Writing the message (this message will appear in the email)
+
+    msg = 'take med!'
+
+    # Gmail Login
+
+    username = 'meditakeisrael'
+    password = 'netta1234'
+
+    # Sending the mail
+
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.starttls()
+    server.login(username, password)
+    server.sendmail(fromaddr, toaddrs, msg)
+    server.quit()
+
+
 if __name__ == "__main__":
-    print(my_trans("jkj"))
+    send_mail("hassidm@gmail.com")
