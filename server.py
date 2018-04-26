@@ -47,9 +47,17 @@ def check(name):
 
     return json_return
 
-@app.route("/add_waiting", methods= ["POST"])
+# @app.route("/add_waiting", methods= ["POST"])
+# def add_waiting():
+#     details = (request.args["mail"], request.args["name"], request["med"])
+#     c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
+#     conn.commit()
+#     return
+
+@app.route("/add_waiting")
 def add_waiting():
-    details = (request.args["mail"], request.args["name"], request["med"])
+    details = (request.args.get("mail"), request.args.get("name"),
+               request.args.get("med"))
     c.execute("INSERT INTO waiting VALUES (?,?,?)", details)
     conn.commit()
     return
@@ -65,12 +73,13 @@ def send_mails_to_waiting_list(med_name):
         for tup in data:
             mich.send_mail(tup[0], tup[1], SUB_MED_FOUND, BODY_MED_FOUND)
 
+
 def create_msg_getter(mail_giver, name_giver):
     return ("talk to the giver!", "talk to" + name_giver + " in mail: " + mail_giver)
 
+
 def create_msg_giver(mail_getter, name_getter):
-    return (
-    "talk to the getter!", "talk to" + name_getter + " in mail: " + mail_getter)
+    return ("talk to the getter!", "talk to" + name_getter + " in mail: " + mail_getter)
 
 
 @app.route("/select_item", methods = ["POST"])
