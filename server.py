@@ -27,6 +27,10 @@ def translate_to_dict(list_data):
 def index():
     return render_template("search.html")
 
+@app.route("/insert")
+def insert():
+    return render_template("insert.html")
+
 
 @app.route("/check=<name>")
 def check(name):
@@ -65,6 +69,7 @@ def send_mails_to_waiting_list(med_name):
 def add():
     global uid
     data = request.args
+    print(data)
     med_name = mich.best_word(all_meds, data["med_name"])
     if med_name is None:
         return jsonify(json.dumps({'state': 1}))
