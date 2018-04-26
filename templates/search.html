@@ -1,7 +1,8 @@
 <input type="text" id="ti"></input>
+<button onclick="hi()"> click here</button>>
 <script>
 const inputTag = document.getElementById('ti')
-inputTag.onChange(() => {
+function hi() {
 //   document.body.removeChild
   fetch(`/check=${inputTag.value}`, {
     method: 'GET'
@@ -13,7 +14,7 @@ inputTag.onChange(() => {
     document.body.appendChild(divElement)
     document.getElementsByName(divElement).innerHTML = data["key"];
   })
-})
+}
 </script>
 
 
